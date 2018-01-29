@@ -8,6 +8,8 @@ Vagrant.configure("2") do |config|
     nodo1.vm.hostname = "nodo1"
     nodo1.vm.network :private_network, ip: "192.168.100.1", netmask: "255.255.255.0",
 	virtualbox__intnet: "redinterna"
+    nodo1.ssh.insert_key = false
+    nodo1.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo1.vm.provision "ansible" do |ansible|
 	ansible.playbook = "play/pnodo1.yml"
    end
@@ -17,6 +19,8 @@ Vagrant.configure("2") do |config|
     nodo2.vm.hostname = "nodo2"
     nodo2.vm.network :private_network, ip: "192.168.100.10", netmask: "255.255.255.0",
         virtualbox__intnet: "redinterna"
+    nodo2.ssh.insert_key = false
+    nodo2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo2.vm.provision "ansible" do |ansible|
         ansible.playbook = "play/pnodo2.yml"
      end
