@@ -1,0 +1,8 @@
+---
+- hosts: nodo1
+  sudo: yes
+  tasks: 
+        - name: instalar mariadb
+          apt:
+                  name: mariadb-server
+                  update_cache: yes

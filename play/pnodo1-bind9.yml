@@ -1,0 +1,8 @@
+---
+- hosts: node1
+  sudo: yes
+  tasks:
+          - name: instalar bind9
+            apt:
+                    name: bind9
+                    update_cache: yes
