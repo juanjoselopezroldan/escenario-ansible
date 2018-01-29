@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
  config.vm.define :nodo2 do |nodo2|
    nodo2.vm.box = "debian/stretch64"
     nodo2.vm.hostname = "nodo2"
-    nodo2.vm.network :private_network, ip: "192.168.100.10", netmask: "255.255.255.0",
+    nodo2.vm.network :private_network, ip: "192.168.100.2", netmask: "255.255.255.0",
         virtualbox__intnet: "redinterna"
     nodo2.ssh.insert_key = false
     nodo2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
