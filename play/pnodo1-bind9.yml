@@ -1,6 +1,6 @@
 ---
 - hosts: nodo1
-  sudo: yes
+  become: yes
   tasks:
           - name: instalar bind9
             apt:

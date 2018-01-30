@@ -1,8 +1,8 @@
 ---
 - hosts: nodo2
-  sudo: yes
+  become: yes
   tasks:
           - name: instalar nginx
             apt:
-                    name: nginx php7.0-fpm
+                    name: nginx
                     update_cache: yes

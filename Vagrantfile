@@ -9,9 +9,9 @@ Vagrant.configure("2") do |config|
     nodo1.ssh.private_key_path = ["private_key", "~/.vagrant.d/insecure_private_key"]
     nodo1.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo1.vm.network :private_network, ip: "10.10.10.2"
-#    nodo1.vm.provision "ansible" do |ansible|
-#	ansible.playbook = "play/pnodo1.yml"
-#    end
+    nodo1.vm.provision "ansible" do |ansible|
+	ansible.playbook = "play/pnodo1.yml"
+    end
    end
 
  config.vm.define :nodo2 do |nodo2|
@@ -21,8 +21,8 @@ Vagrant.configure("2") do |config|
     nodo2.ssh.private_key_path = ["private_key", "~/.vagrant.d/insecure_private_key"]
     nodo2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo2.vm.network :private_network, ip: "10.10.10.3"
-    #nodo2.vm.provision "ansible" do |ansible|
-    #    ansible.playbook = "play/pnodo2.yml"
-    #end
+    nodo2.vm.provision "ansible" do |ansible|
+        ansible.playbook = "play/pnodo2.yml"
+    end
  end
 end
