@@ -1,0 +1,8 @@
+---
+- hosts: nodo2
+  become: yes
+  tasks:
+          - name: instalar FPM
+            apt:
+                    name: php7.0-fpm
+                    update_cache: yes
