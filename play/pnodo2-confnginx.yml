@@ -15,7 +15,9 @@
           state: absent
 
 - name: descargar default
-  get_url: url=
+  get_url: url=https://github.com/juanjoselopezroldan/escenario-ansible/blob/master/play/default dest=/etc/nginx/sites-availables/default
+  validate_certs=no
+  become: yes
       
 - name: extaer wordpress 
   unarchive: src=/tmp/wordpress.tar.gz 
