@@ -8,7 +8,14 @@
                   update_cache: yes
 
         - name: crear base de datos
-          mysql_db: db=wordpress state=present
+          mysql_db:
+                  name: wordpress
+                  state: present
 
         - name: crear usuario
-          mysql_user: user=usuario password=usuario priv=*.*:ALL state=present
+          mysql_user:
+                  name: usuario
+                  password: usuario
+                  priv: '*.*:ALL'
+                  host_all: yes
+                  state:  present
