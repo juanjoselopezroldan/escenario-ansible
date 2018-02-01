@@ -16,21 +16,9 @@
 	- name: Setup MySQL root password
 	mysql_user:
 		name: "root"
-		password: "mysql"
-		host: "{{ item }}"
+		password: "root"
+		host: "localhost"
 		state: present
-		with_items:
-		- "{{ ansible_hostname }}"
-		- 127.0.0.1
-		- ::1
-		- localhost
-
-	- name: Setup MySQL creds for root user
-	template:
-		src: "{{ mysqlTemplatePath }}"
-		dest: "/root/.my.cnf"
-		owner: "root"
-		mode: 0600
 
 	- name: Setup empty database for WordPress
 	mysql_db:
@@ -39,7 +27,7 @@
 		collation: "utf8_unicode_ci"
 		state: "present"
 		login_user: "root"
-		login_password: "mysql"
+		login_password: "root"
 
 	- name: Setup MySQL user for WordPress
 	mysql_user:
