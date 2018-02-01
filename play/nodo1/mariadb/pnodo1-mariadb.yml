@@ -19,3 +19,11 @@
                   priv: '*.*:ALL'
                   host_all: yes
                   state:  present
+
+        - name: configuracion del fichero de mariadb
+          template:
+                  src=my.cnf
+                  dest=/etc/mysql/mariadb.conf/50-server.cnf
+
+        - name: reiniciar servicio mysql
+          service: name=mysql state=restarted
