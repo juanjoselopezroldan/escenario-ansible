@@ -6,24 +6,4 @@
             apt:
                     name: nginx
                     update_cache: yes
-          
-          - name: Unzip WordPress
-            unarchive:
-                    src: wordpress.zip 
-                    dest: /vagrant/
-  
-          - name: Symlink web root to unzipped WordPress
-            file:
-                    src: "/vagrant/wordpress"
-                    dest: "/var/www/wordpress"
-                    state: "link"
 
-	  - name: eliminar default
-	    file:
-            path: /etc/nginx/sites-availables/default
-            state: absent
-  
-          - name: Copy virtual host setup over
-            template: 
-            src: "conf/default"
-            dest: /etc/nginx/sites-available/

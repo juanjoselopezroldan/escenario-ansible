@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     nodo1.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo1.vm.network :private_network, ip: "10.10.10.2"
     nodo1.vm.provision "ansible" do |ansible|
-	ansible.playbook = "play/pnodo1.yml"
+	ansible.playbook = "play/nodo1/pnodo1.yml"
     end
    end
 
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     nodo2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
     nodo2.vm.network :private_network, ip: "10.10.10.3"
     nodo2.vm.provision "ansible" do |ansible|
-        ansible.playbook = "play/pnodo2.yml"
+        ansible.playbook = "play/nodo2/pnodo2.yml"
     end
  end
 end
