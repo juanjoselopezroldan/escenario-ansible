@@ -6,15 +6,14 @@
             apt:
                     name: nginx
                     update_cache: yes
-
+          
           - name: eliminar default generado
             command: rm /etc/nginx/sites-availables/default
-
-
+          
           - name: configuracion de virtualhost
             template:
                     src=nginx/default
                     dest=/etc/nginx/sites-availables/default
-
+          
           - name: reiniciar servicio
             servicio: name=nginx state=restarted

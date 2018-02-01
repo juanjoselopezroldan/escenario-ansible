@@ -7,8 +7,8 @@
                   name: mariadb-server
                   update_cache: yes
 
-	- name: crear base de datos
-	  mysql_db: db=wordpress state=present
+        - name: crear base de datos
+          mysql_db: db=wordpress state=present
 
-	- name: crear usuario
-	  mysql_user: user=usuario password=usuario priv=*.*:ALL state=present
+        - name: crear usuario
+          mysql_user: user=usuario password=usuario priv=*.*:ALL state=present
