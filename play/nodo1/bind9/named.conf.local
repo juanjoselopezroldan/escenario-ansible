@@ -1,0 +1,9 @@
+zone "nodos.com" {
+type master;
+file "/var/cache/bind/db.nodos.com";
+};
+
+zone "10.10.10.in-addr.arpa" {
+type master;
+file "/var/cache/bind/db.10.10.10";
+};
