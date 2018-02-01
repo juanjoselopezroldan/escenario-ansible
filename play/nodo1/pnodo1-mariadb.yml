@@ -2,9 +2,9 @@
 - hosts: nodo1
   become: yes
   tasks: 
-        - name: instalar mysql
+        - name: instalar mariadb
           apt:
-                  name: mysql-server
+                  name: mariadb-server
                   update_cache: yes
 
 	- name: crear base de datos
