@@ -7,33 +7,8 @@
                   name: mysql-server
                   update_cache: yes
 
-	- name: Start MySQL service
-	service:
-		name: "mysql"
-		state: started
-		enabled: yes
+	- name: crear base de datos
+	  mysql_db: db=wordpress state=present
 
-	- name: Setup MySQL root password
-	mysql_user:
-		name: "root"
-		password: "root"
-		host: "localhost"
-		state: present
-
-	- name: Setup empty database for WordPress
-	mysql_db:
-		name: "wordpress"
-		encoding: "utf8"
-		collation: "utf8_unicode_ci"
-		state: "present"
-		login_user: "root"
-		login_password: "root"
-
-	- name: Setup MySQL user for WordPress
-	mysql_user:
-		name: "user_wp"
-		password: "wordpress"
-		host: "localhost"
-		priv: "wordpress.*:ALL"
-		state: "present"
-
+	- name: crear usuario
+	  mysql_user: user=usuario password=usuario priv=*.*:ALL state=present
