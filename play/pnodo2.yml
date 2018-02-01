@@ -1,3 +1,2 @@
 - include: pnodo2-nginx.yml
 - include: pnodo2-fpm.yml
-- include: pnodo2-confnginx.yml

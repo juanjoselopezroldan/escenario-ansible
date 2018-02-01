@@ -49,8 +49,3 @@
 		priv: "wordpress.*:ALL"
 		state: "present"
 
-	- name: Unzip WordPress
-	unarchive: 
-		src: wordpress.zip 
-		dest: /vagrant/
-
