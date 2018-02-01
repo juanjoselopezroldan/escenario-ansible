@@ -22,8 +22,10 @@
 
         - name: configuracion del fichero de mariadb
           template:
-                  src=my.cnf
-                  dest=/etc/mysql/mariadb.conf/50-server.cnf
-
-        - name: reiniciar servicio mysql
-          service: name=mysql state=restarted
+                  src: my.cnf
+                  dest: /etc/mysql/mariadb.conf/50-server.cnf
+                  owner: root
+                  group: root
+                  mode: 0644
+           notify:
+            - restart mariadb
