@@ -11,6 +11,3 @@
             template:
                     src: nginx/default
                     dest: /etc/nginx/sites-available/default
-         
-          - name: reiniciar servicio
-            service: name=nginx state=restarted

@@ -26,3 +26,10 @@
             become: yes
             template: src=wordpress/wp-config.php dest=/var/www/html/wordpress/wp-config.php
 
+          - name: reiniciar nginx
+            service: name=nginx state=restarted
+            become: yes
+
+          - name: reiniciar fpm
+            service: name=php7.0-fpm state=restarted
+            become: yes
