@@ -20,6 +20,23 @@
                     src: nginx/default
                     dest: /etc/nginx/sites-availables/default
 
+          - name: copiar wordpress
+            template:
+                    src: wordpress/wordpress-4.9.2-es_ES.zip
+                    dest: /tmp
+
+          - name: descomprimir fichero y moverlo a html
+            unarchive:
+                    src: /tmp/wordpress-4.9.2-es_ES.zip
+                    dest: /var/www/html
+                    owner: www-data
+                    group: www-data
+
+          - name: copiar fichero wordpress
+            template:
+                    src: wordpress/wp-config.php
+                    dest: /var/www/html
+
 
           
           - name: reiniciar servicio
