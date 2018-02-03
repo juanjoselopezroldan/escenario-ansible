@@ -30,6 +30,7 @@
                   mode: 0644
 
         - name: copiar fichero sql
+          template:
                   src: mysql/wordpress.sql
                   dest: /tmp
 

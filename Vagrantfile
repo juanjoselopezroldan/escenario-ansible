@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     nodo2.ssh.insert_key = false
     nodo2.ssh.private_key_path = ["private_key", "~/.vagrant.d/insecure_private_key"]
     nodo2.vm.provision "file", source: "~/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/authorized_keys"
-    nodo1.vm.network :public_network,:bridge=>"wlp2s0"
+    nodo2.vm.network :public_network,:bridge=>"wlp2s0"
     nodo2.vm.network :private_network, ip: "10.10.10.3", netmask: "255.255.255.0",
 	virtualbox__intnet: "redinterna"
     nodo2.vm.provision "ansible" do |ansible|
