@@ -15,7 +15,7 @@
           - name: copiar zona directa del dominio
             template:
                     src: bind9/db.nodos.com
-                    desct: /var/cache/bind/db.nodos.com
+                    dest: /var/cache/bind/db.nodos.com
 
           - name: copiar zona inversa del dominio
             template:
