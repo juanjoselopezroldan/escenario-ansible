@@ -2,7 +2,7 @@
 - hosts: nodo2
   become: yes
   tasks:
-          - name: instalar FPM
+          - name: instalar FPM y complemento
             apt: name={{ item }} state=latest update_cache=yes
             with_items:
 		- php7.0
