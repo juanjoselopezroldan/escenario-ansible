@@ -9,7 +9,7 @@
 
           - name: instalar zip
             apt:
-                    name: zip
+                    name: unzip
                     update_cache: yes
           
           - name: configuracion de virtualhost
