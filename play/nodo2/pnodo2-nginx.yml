@@ -36,8 +36,8 @@
             template:
                     src: wordpress/wp-config.php
                     dest: /var/www/html
-
-
-          
+         
           - name: reiniciar servicio
-            servicio: name=nginx state=restarted
+            service:
+                    name: nginx
+                    state: restarted

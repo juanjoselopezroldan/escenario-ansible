@@ -40,5 +40,7 @@
                   dest: /tmp/wordpress.sql
 
 
-        - name: reiniciar servicio mariadb
-          service: name=mariadb state=restarted
+        - name: reiniciar servicio mysql
+          service:
+                  name: mysql
+                  state: restarted
