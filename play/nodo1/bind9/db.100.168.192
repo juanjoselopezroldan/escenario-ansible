@@ -13,6 +13,6 @@ $TTL 86400
 ;
 @	IN	NS	nodo1.nodos.com.
 
-$ORIGIN	10.10.10.in-addr.arpa.
-2	IN	PTR	nodo1.nodos.com.
-3	IN	PTR	nodo2.nodos.com.
+$ORIGIN	100.168.192.in-addr.arpa.
+251	IN	PTR	nodo1.nodos.com.
+252	IN	PTR	nodo2.nodos.com.

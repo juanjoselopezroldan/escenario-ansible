@@ -14,6 +14,6 @@ $TTL 86400
 @	IN	NS	nodo1.nodos.com.
 
 $ORIGIN	nodos.com.
-nodo1	IN	A	10.10.10.2
-nodo2	IN	A	10.10.10.3
+nodo1	IN	A	192.168.100.251
+nodo2	IN	A	192.168.100.252
 www	IN	CNAME	nodo2
