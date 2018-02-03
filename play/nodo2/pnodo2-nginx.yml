@@ -13,6 +13,4 @@
                     dest: /etc/nginx/sites-available/default
          
           - name: reiniciar servicio
-            service:
-                    name: nginx
-                    state: restarted
+            service: name=nginx state=restarted

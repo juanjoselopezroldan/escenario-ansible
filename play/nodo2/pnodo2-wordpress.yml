@@ -2,12 +2,12 @@
 - hosts: nodo2
   become: yes
   tasks:
-	  - name: instalar zip
+          - name: instalar zip
             apt:
                     name: unzip
                     update_cache: yes
-          	  
-	  - name: Extraer wordpress
+
+          - name: Extraer wordpress
             become: yes
             unarchive:
                     src: http://wordpress.org/latest.tar.gz
@@ -25,3 +25,4 @@
           - name: copiar fichero wordpress
             become: yes
             template: src=wordpress/wp-config.php dest=/var/www/html/wordpress/wp-config.php
+
