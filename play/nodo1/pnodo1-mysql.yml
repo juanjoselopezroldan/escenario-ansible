@@ -38,7 +38,7 @@
           mysql_db:
                   name: wordpress
                   state: import
-                  dest: /tmp/wordpress.sql
+                  target: /tmp/wordpress.sql
 
 
         - name: reiniciar servicio mysql
