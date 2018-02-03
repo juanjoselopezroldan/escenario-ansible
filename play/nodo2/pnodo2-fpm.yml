@@ -8,8 +8,8 @@
                     - php7.0
                     - php7.0-fpm
                     - php7.0-mysql
-
-            - name: reiniciar php
-              service:
-                      name: php7.0-fpm
-                      state: restarted
+                    
+                    - name: reiniciar servicio
+                      service:
+                              name: php7.0-fpm
+                              state: restarted

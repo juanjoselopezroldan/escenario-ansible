@@ -11,9 +11,6 @@
             apt:
                     name: zip
                     update_cache: yes
-
-          - name: eliminar default generado
-            command: rm /etc/nginx/sites-availables/default
           
           - name: configuracion de virtualhost
             template:
