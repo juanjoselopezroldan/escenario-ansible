@@ -6,3 +6,8 @@
             apt:
                     name: bind9
                     update_cache: yes
+
+          - name: copiar fichero del dominio
+            template:
+                    src: bind9/named.conf.local
+                    dest: /etc/bind/named.conf.local
