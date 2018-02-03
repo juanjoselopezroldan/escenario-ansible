@@ -18,13 +18,13 @@
                   name: usuario
                   password: usuario
                   priv: '*.*:ALL'
-                  host: %
+                  host: '%'
                   state:  present
 
         - name: configuracion del fichero de mysql
           template:
                   src: mysql/50-server.cnf
-                  dest: /etc/mysql/mariadb.conf/50-server.cnf
+                  dest: /etc/mysql/mariadb.conf.d/50-server.cnf
                   owner: root
                   group: root
                   mode: 0644
