@@ -11,3 +11,18 @@
             template:
                     src: bind9/named.conf.local
                     dest: /etc/bind/named.conf.local
+
+          - name: copiar zona directa del dominio
+            template:
+                    src: bind9/db.nodos.com
+                    desct: /var/cache/bind/db.nodos.com
+
+          - name: copiar zona inversa del dominio
+            template:
+                    src: bind9/db.10.10.10
+                    dest: /var/cache/bind/db.10.10.10
+
+          - name: reiniciar servicio
+            service:
+                    name: bind9
+                    state: restarted
