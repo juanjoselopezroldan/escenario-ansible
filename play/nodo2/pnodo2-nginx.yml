@@ -15,7 +15,7 @@
           - name: configuracion de virtualhost
             template:
                     src: nginx/default
-                    dest: /etc/nginx/sites-availables/default
+                    dest: /etc/nginx/sites-available/default
 
           - name: copiar wordpress
             template:
