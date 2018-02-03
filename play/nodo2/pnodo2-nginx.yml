@@ -7,36 +7,10 @@
                     name: nginx
                     update_cache: yes
 
-          - name: instalar zip
-            apt:
-                    name: unzip
-                    update_cache: yes
-          
           - name: configuracion de virtualhost
             template:
                     src: nginx/default
                     dest: /etc/nginx/sites-available/default
-
-          - name: Extraer wordpress
-            become: yes
-            unarchive:
-                    src: http://wordpress.org/latest.tar.gz
-                    dest: /var/www/html/
-                    remote_src: yes
-                    owner: www-data
-                    group: www-data
-
-          - name: Get wordpress salt
-            local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
-            register: "wp_salt"
-            become: no
-            become_method: sudo
-
-          - name: copiar fichero wordpress
-            become: yes
-            template:
-                    src: wordpress/wp-config.php
-                    dest: /var/www/html/wordpress/wp-config.php
          
           - name: reiniciar servicio
             service:
