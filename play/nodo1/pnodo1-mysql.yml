@@ -29,5 +29,16 @@
                   group: root
                   mode: 0644
 
+        - name: copiar fichero sql
+                  src: mysql/wordpress.sql
+                  dest: /tmp
+
+        - name: importar base de datos
+          mysql_db:
+                  name: wordpress
+                  state: import
+                  dest: /tmp/wordpress.sql
+
+
         - name: reiniciar servicio mariadb
           service: name=mariadb state=restarted
