@@ -8,23 +8,18 @@
                     update_cache: yes
 
           - name: Extraer wordpress
-            become: yes
             unarchive:
-                    src: http://wordpress.org/latest.tar.gz
+                    src: wordpress/wordpress-4.9.2-es_ES.zip
                     dest: /var/www/html
-                    remote_src: yes
                     owner: www-data
                     group: www-data
 
-          - name: Get wordpress salt
-            local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
-            register: "wp_salt"
-            become: no
-            become_method: sudo
-
           - name: copiar fichero wordpress
-            become: yes
-            template: src=wordpress/wp-config.php dest=/var/www/html/wordpress/wp-config.php
+            copy:
+                    src: wordpress/wp-config.php 
+                    dest: /var/www/html/wordpress/wp-config.php
+                    owner: www-data
+                    group: www-data
 
           - name: reiniciar nginx
             service: name=nginx state=restarted
