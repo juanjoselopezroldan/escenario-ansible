@@ -18,7 +18,7 @@
                   name: usuario
                   password: usuario
                   priv: '*.*:ALL'
-                  host_all: yes
+                  host: %
                   state:  present
 
         - name: configuracion del fichero de mysql
