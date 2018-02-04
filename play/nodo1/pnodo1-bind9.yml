@@ -19,8 +19,8 @@
 
           - name: copiar zona inversa del dominio
             template:
-                    src: bind9/db.10.10.10
-                    dest: /var/cache/bind/db.10.10.10
+                    src: bind9/db.100.168.192
+                    dest: /var/cache/bind/db.100.168.192
 
           - name: reiniciar servicio
             service:
