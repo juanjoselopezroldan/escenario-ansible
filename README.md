@@ -12,7 +12,7 @@ Para poder utilizar este escenario orquestado por Asible tienes que tener la con
 ip a add 192.168.100.250/24 dev wlp2s0
 ```
 
-Acto seguido tendremos que indicar en el fichero /etc/resolv.conf el servidor DNS que tenemos configurado que en nuestro caso es la ip 192.168.100.251 (tienes que definirta en la anfitriona).
+Acto seguido tendremos que indicar en el fichero /etc/resolv.conf el servidor DNS que tenemos configurado que en nuestro caso es la ip 192.168.100.251 (tienes que definirta en la anfitriona y eliminar los demas nameservers).
 
 ```
 nano /etc/resolv.conf
