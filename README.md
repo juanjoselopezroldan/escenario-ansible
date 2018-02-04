@@ -1,4 +1,11 @@
 # escenario-ansible
+Este directorio de Github almacena una practica basada en ANSIBLE, con el cual realizamos la orquestacion de un escenario sencillo que esta compuesto por dos maquinas que ofrecen diferentes servicios.
+
+El nodo 1 ofrece un servidor DNS y un servidor MySQL.
+
+El nodo 2 ofrece un servidor web nginx con php7.0-fpm, el cual ofrece un wordpress que tiene almacenado sus datos en el nodo 1 (en mysql).
+
+
 Para poder utilizar este escenario orquestado por Asible tienes que tener la configuracion de red 192.168.100.X/24, puedes utilizar el siguiente:
 
 ```
