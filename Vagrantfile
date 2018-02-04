@@ -11,9 +11,9 @@ Vagrant.configure("2") do |config|
     nodo1.vm.network :private_network, ip: "192.168.100.251", netmask: "255.255.255.0"
     nodo1.vm.network :private_network, ip: "10.10.10.2", netmask: "255.255.255.0",
 	virtualbox__intnet: "redinterna"
-#    nodo1.vm.provision "ansible" do |ansible|
-#	ansible.playbook = "play/nodo1/pnodo1.yml"
-#    end
+    nodo1.vm.provision "ansible" do |ansible|
+	ansible.playbook = "play/nodo1/pnodo1.yml"
+    end
    end
 
  config.vm.define :nodo2 do |nodo2|
@@ -25,8 +25,8 @@ Vagrant.configure("2") do |config|
     nodo2.vm.network :private_network, ip: "192.168.100.252", netmask: "255.255.255.0"
     nodo2.vm.network :private_network, ip: "10.10.10.3", netmask: "255.255.255.0",
 	virtualbox__intnet: "redinterna"
-#    nodo2.vm.provision "ansible" do |ansible|
-#        ansible.playbook = "play/nodo2/pnodo2.yml"
-#    end
+    nodo2.vm.provision "ansible" do |ansible|
+        ansible.playbook = "play/nodo2/pnodo2.yml"
+    end
  end
 end
